@@ -81,6 +81,12 @@ def upload():
             # Apply the transformations
             img_tensor = test_transforms(cropped_hand_array)
             print(9)
+            #Make a prediction using the model
+            prediction = model_test(img_tensor[None].to("cpu")) 
+            print(10)
+            # Get the predicted label
+            pred_label = classes[torch.max(prediction, dim=1)[1]]
+            print(pred_label)
         return {'status': 'success'}
     
     except Exception as e:
