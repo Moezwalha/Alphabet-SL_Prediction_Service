@@ -92,5 +92,6 @@ def upload():
     except Exception as e:
         return {'status': 'error', 'message': str(e)}
 
+
 if __name__ == '__main__':
     app.run()
