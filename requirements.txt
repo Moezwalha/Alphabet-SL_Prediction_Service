@@ -1,4 +1,5 @@
 Flask
+pip
 pillow
 mediapipe
 numpy
