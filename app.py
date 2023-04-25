@@ -72,7 +72,7 @@ def upload():
             ])
 
             # Apply the transformations to the image
-            cropped_hand_tensor = transform(cropped_hand_pil)
+            cropped_hand_tensor = transform(cropped_hand_array)
             print(9)
             #Make a prediction using the model
             prediction = model_test(cropped_hand_tensor[None].to("cpu")) 
