@@ -7,7 +7,7 @@ from torchvision import models
 import torch.nn as nn
 import numpy as np
 import cv2
-from torchvision import transforms
+from torchvision.transforms import Resize, ToTensor
 
 def get_net():
     finetune_net = nn.Sequential()
@@ -64,19 +64,17 @@ def upload():
             cropped_hand_array = Image.fromarray(processed_frame)
             print(cropped_hand_array)
             print(8)
-            # Apply the transformations
-            # Define the transformations to apply
-            transform = transforms.Compose([
-                print(11)
-                transforms.Resize((224, 224)),  # Resize the image to a specific size
-                print(12)
-                transforms.ToTensor(),  # Convert the image to a PyTorch tensor
-                print(13)
-            ])
-
-            # Apply the transformations to the image
-            cropped_hand_tensor = transform(cropped_hand_array)
+            
+            # Resize the image to a specific size
+            resize = Resize((224, 224))
+            print(8.5)
+            cropped_hand_pil = resize(cropped_hand_array)
             print(9)
+            # Convert the image to a PyTorch tensor
+            to_tensor = ToTensor()
+            print(9.25)
+            cropped_hand_tensor = to_tensor(cropped_hand_pil)
+            print(9.5)
             #Make a prediction using the model
             prediction = model_test(cropped_hand_tensor[None].to("cpu")) 
             print(10)
