@@ -79,11 +79,11 @@ def upload():
             cropped_hand_tensor = torch.from_numpy(cropped_hand_array)
             print(9.5)
             #Make a prediction using the model
-            #prediction = model_test(cropped_hand_tensor[None].to("cpu")) 
+            prediction = model_test(cropped_hand_tensor[None].to("cpu")) 
             print(10)
             # Get the predicted label
-            #pred_label = classes[torch.max(prediction, dim=1)[1]]
-            #print(pred_label)
+            pred_label = classes[torch.max(prediction, dim=1)[1]]
+            print(pred_label)
         return {'status': 'success'}
     
     except Exception as e:
