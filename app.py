@@ -67,8 +67,11 @@ def upload():
             # Apply the transformations
             # Define the transformations to apply
             transform = transforms.Compose([
-                    transforms.Resize((224, 224)),  # Resize the image to a specific size
-                    transforms.ToTensor(),  # Convert the image to a PyTorch tensor
+                print(11)
+                transforms.Resize((224, 224)),  # Resize the image to a specific size
+                print(12)
+                transforms.ToTensor(),  # Convert the image to a PyTorch tensor
+                print(13)
             ])
 
             # Apply the transformations to the image
