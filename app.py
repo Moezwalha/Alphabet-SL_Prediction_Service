@@ -68,7 +68,7 @@ def upload():
             # Resize the image to a specific size
             resize = Resize((224, 224))
             print(8.5)
-            #cropped_hand_pil = resize(cropped_hand_array)
+            cropped_hand_pil = resize(cropped_hand_array)
             #print(9)
             # Convert the image to a PyTorch tensor
             to_tensor = ToTensor()
