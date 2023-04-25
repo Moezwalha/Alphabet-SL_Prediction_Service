@@ -69,11 +69,10 @@ def upload():
             resize = Resize((224, 224))
             print(8.5)
             cropped_hand_pil = resize(cropped_hand_array)
-            #print(9)
+            print(9)
             # Convert the image to a PyTorch tensor
             to_tensor = ToTensor()
-            print(9.25)
-            #cropped_hand_tensor = to_tensor(cropped_hand_pil)
+            cropped_hand_tensor = to_tensor(cropped_hand_pil)
             print(9.5)
             #Make a prediction using the model
             #prediction = model_test(cropped_hand_tensor[None].to("cpu")) 
