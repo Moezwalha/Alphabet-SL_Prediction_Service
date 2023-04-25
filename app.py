@@ -1,7 +1,6 @@
 from flask import Flask, request
 import base64
 from PIL import Image
-from io import BytesIO
 from preprocess4 import Pr1
 import torch
 from torchvision import models
@@ -10,9 +9,7 @@ import numpy as np
 import cv2
 import torchvision.transforms as transforms
 
-def test_transforms(image):
-        
-    transforms = transforms.Compose([
+transforms = transforms.Compose([
         # resize the image to 224x224 pixels
         transforms.Resize((224, 224)),
         # convert the image to a PyTorch tensor
@@ -21,7 +18,6 @@ def test_transforms(image):
         transforms.Normalize([0.5189, 0.4991, 0.5138],
                              [0.2264, 0.2539, 0.2625])
     ])
-    return transforms(image)
 
 def get_net():
     finetune_net = nn.Sequential()
@@ -79,7 +75,7 @@ def upload():
             print(cropped_hand_array)
             print(8)
             # Apply the transformations
-            img_tensor = test_transforms(cropped_hand_array)
+            img_tensor = transforms(cropped_hand_array)
             print(9)
             #Make a prediction using the model
             prediction = model_test(img_tensor[None].to("cpu")) 
