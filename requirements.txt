@@ -4,7 +4,7 @@ mediapipe
 numpy
 opencv-python
 pytorch
-torchvision==0.15.1
+torchvision
 torch==2.0.0
 mediapipe
 gunicorn
