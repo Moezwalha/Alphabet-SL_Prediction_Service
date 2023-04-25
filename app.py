@@ -79,7 +79,8 @@ def upload():
             print(cropped_hand_array)
             print(8)
             # Apply the transformations
-            # img_tensor = test_transforms(cropped_hand_array)
+            img_tensor = test_transforms(cropped_hand_array)
+            print(9)
         return {'status': 'success'}
     
     except Exception as e:
