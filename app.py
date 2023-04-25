@@ -7,6 +7,8 @@ from preprocess2 import test_transforms
 import torch
 from torchvision import models
 import torch.nn as nn
+import numpy as np
+import cv2
 
 def get_net():
     finetune_net = nn.Sequential()
