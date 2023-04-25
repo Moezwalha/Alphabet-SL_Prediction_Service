@@ -70,6 +70,7 @@ def upload():
             print(8.5)
             cropped_hand_pil = resize(cropped_hand_array)
             print(cropped_hand_pil)
+            print(type(cropped_hand_pil))
             print(9)
             # Convert the image to a PyTorch tensor
             to_tensor = ToTensor()
