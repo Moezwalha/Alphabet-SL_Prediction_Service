@@ -54,7 +54,14 @@ def upload():
         # Decode the numpy array to an image using OpenCV
         frame = cv2.imdecode(nparr, cv2.IMREAD_UNCHANGED)
         print(4)
-
+        
+        # Process the image as needed
+        p1 = Pr1(frame)
+        print(5)
+        processed_frame = p1.detect_crop_and_segment_hands(p1.image)
+        print(6)
+        if processed_frame is not None: 
+            print(7)
         return {'status': 'success'}
     
     except Exception as e:
