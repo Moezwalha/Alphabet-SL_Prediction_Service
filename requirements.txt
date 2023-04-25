@@ -3,7 +3,7 @@ pillow
 mediapipe
 numpy
 opencv-python
-torchvision
-torch
+torchvision==0.15.1
+torch==2.0.0
 mediapipe
 gunicorn
