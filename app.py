@@ -2,7 +2,11 @@ from flask import Flask, request
 import base64
 from PIL import Image
 from io import BytesIO
-
+from preprocess4 import Pr1
+from preprocess2 import test_transforms
+import torch
+from torchvision import models
+import torch.nn as nn
 
 def get_net():
     finetune_net = nn.Sequential()
