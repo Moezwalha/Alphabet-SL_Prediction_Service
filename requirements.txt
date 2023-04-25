@@ -3,7 +3,6 @@ pillow
 mediapipe
 numpy
 opencv-python
-pytorch
 torchvision
 torch
 mediapipe
