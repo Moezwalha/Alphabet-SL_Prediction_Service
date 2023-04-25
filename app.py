@@ -7,8 +7,8 @@ from torchvision import models
 import torch.nn as nn
 import numpy as np
 import cv2
-from torchvision.transforms import Resize, ToTensor
-
+from torchvision.transforms import Resize
+from torchvision.transforms import ToTensor
 def get_net():
     finetune_net = nn.Sequential()
     finetune_net.features = models.resnet18(weights='ResNet18_Weights.DEFAULT')
@@ -74,7 +74,7 @@ def upload():
             print(9)
             # Convert the image to a PyTorch tensor
             to_tensor = ToTensor()
-            #cropped_hand_tensor = to_tensor(cropped_hand_pil)
+            cropped_hand_tensor = to_tensor(cropped_hand_pil)
             print(9.5)
             #Make a prediction using the model
             #prediction = model_test(cropped_hand_tensor[None].to("cpu")) 
